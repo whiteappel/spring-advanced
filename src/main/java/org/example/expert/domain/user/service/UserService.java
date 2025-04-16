@@ -22,6 +22,9 @@ public class UserService {
         User user = userRepository.findById(userId).orElseThrow(() -> new InvalidRequestException("User not found"));
         return new UserResponse(user.getId(), user.getEmail());
     }
+    /*dto로 옮기기
+    controller userController와
+    dto request/ userChangePasswordRequest부분 수정
 
     @Transactional
     public void changePassword(long userId, UserChangePasswordRequest userChangePasswordRequest) {
@@ -30,7 +33,7 @@ public class UserService {
                 !userChangePasswordRequest.getNewPassword().matches(".*[A-Z].*")) {
             throw new InvalidRequestException("새 비밀번호는 8자 이상이어야 하고, 숫자와 대문자를 포함해야 합니다.");
         }
-
+    */
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new InvalidRequestException("User not found"));
 

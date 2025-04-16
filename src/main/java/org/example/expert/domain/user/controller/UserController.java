@@ -8,7 +8,8 @@ import org.example.expert.domain.user.dto.response.UserResponse;
 import org.example.expert.domain.user.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import jakarta.validation.Valid;
+//@vaild 추가
 @RestController
 @RequiredArgsConstructor
 public class UserController {
@@ -20,8 +21,8 @@ public class UserController {
         return ResponseEntity.ok(userService.getUser(userId));
     }
 
-    @PutMapping("/users")
-    public void changePassword(@Auth AuthUser authUser, @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
+    @PutMapping("/users")//@vaild 추가해서 조건 인식하게 햇음
+    public void changePassword(@Auth AuthUser authUser, @Vaild @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
     }
 }
