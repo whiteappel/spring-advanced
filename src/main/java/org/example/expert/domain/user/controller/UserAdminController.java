@@ -18,4 +18,5 @@ public class UserAdminController {
     public void changeUserRole(@PathVariable long userId, @RequestBody UserRoleChangeRequest userRoleChangeRequest) {
         userAdminService.changeUserRole(userId, userRoleChangeRequest);
     }
+    //도전기능 이해중
 }
