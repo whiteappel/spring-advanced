@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @PutMapping("/users")//@vaild 추가해서 조건 인식하게 햇음
-    public void changePassword(@Auth AuthUser authUser, @Vaild @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
+    public void changePassword(@Auth AuthUser authUser, @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
     }
 }
