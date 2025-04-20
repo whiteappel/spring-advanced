@@ -31,6 +31,7 @@ public class WeatherClient {
             throw new ServerException("날씨 데이터를 가져오는데 실패했습니다. 상태 코드: " + responseEntity.getStatusCode());
         }
         //else부분을 없애면 된다.
+        //lv5 테스트 코드관련짜는중 어캐짤지 공부중
         if (weatherArray == null || weatherArray.length == 0) {
                 throw new ServerException("날씨 데이터가 없습니다.");
         }
